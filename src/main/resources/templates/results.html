@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Boxdly</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://a.ltrbxd.com/logos/letterboxd-logo-alt-v-neg-rgb-1000px.png" 
+                 alt="Letterboxd Logo" class="logo">
+            <h1>Boxdly - Letterboxd Tracker</h1>
+        </header>
+
+        <div class="results-section">
+            <div class="results-header">
+                <h2>Top 4 Films for <span th:text="${username}"></span></h2>
+                <p class="month-info" th:text="'Month: ' + ${month}"></p>
+                <a href="/" class="back-link">← Search another user</a>
+            </div>
+
+            <div th:if="${films.isEmpty()}" class="no-results">
+                <p>No rated films found for this month.</p>
+            </div>
+
+            <div class="films-grid" th:unless="${films.isEmpty()}">
+                <div class="film-card" th:each="film, iterStat : ${films}">
+                    <div class="rank-badge" th:text="${iterStat.count}"></div>
+                    <a th:href="${film.filmUrl}" target="_blank" class="film-link">
+                        <div class="film-poster">
+                            <img th:src="${film.posterUrl}" 
+                                 th:alt="${film.title}"
+                                 onerror="this.src='https://via.placeholder.com/230x345?text=No+Poster'">
+                        </div>
+                        <div class="film-info">
+                            <h3 th:text="${film.title}"></h3>
+                            <p class="film-year" th:text="${film.year}"></p>
+                            <div class="rating">
+                                <span class="stars" th:text="${#strings.repeat('★', film.rating / 2)}"></span>
+                                <span class="stars-half" th:if="${film.rating % 2 == 1}">½</span>
+                                <span class="rating-value" th:text="${film.starRating} + ' / 5.0'"></span>
+                            </div>
+                            <p class="watched-date" th:if="${film.watchedDate}" 
+                               th:text="'Watched: ' + ${#temporals.format(film.watchedDate, 'MMM dd, yyyy')}"></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built with Spring Boot | Scrapes data from Letterboxd.com</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 60px;
+}
+
+.brand-logo {
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: -3px;
+}
+
+.brand-bo {
+    color: #ff8c42;
+}
+
+.brand-x {
+    color: #7bc950;
+}
+
+.brand-d {
+    color: #5b9bd5;
+}
+
+.brand-ly {
+    color: #87ceeb;
+}
+
+.tagline {
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.search-section {
+    margin-bottom: 80px;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.username-label {
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.letterboxd-link {
+    color: #ff8c42;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 18px 25px;
+    font-size: 1.1rem;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background: #000000;
+    color: #999;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #555;
+    color: #fff;
+}
+
+input[type="text"]::placeholder {
+    color: #666;
+}
+
+.search-button {
+    padding: 18px 80px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background: #7bc950;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: none;
+}
+
+.search-button:hover {
+    background: #6ab841;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(123, 201, 80, 0.4);
+}
+
+.error-message {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.results-section {
+    margin-bottom: 60px;
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.results-header h2 {
+    font-size: 2rem;
+    color: #00e054;
+    margin-bottom: 10px;
+}
+
+.month-info {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    color: #00e054;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    color: #00c047;
+    text-decoration: underline;
+}
+
+.no-results {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    font-size: 1.2rem;
+}
+
+.films-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.film-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.film-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 224, 84, 0.3);
+}
+
+.rank-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #00e054;
+    color: #1e3a5f;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.film-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.film-poster {
+    width: 100%;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.film-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.film-card:hover .film-poster img {
+    transform: scale(1.05);
+}
+
+.film-info {
+    padding: 20px;
+}
+
+.film-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.film-year {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.stars {
+    color: #00e054;
+    font-size: 1.2rem;
+}
+
+.stars-half {
+    color: #00e054;
+    font-size: 1.2rem;
+}
+
+.rating-value {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.watched-date {
+    color: #888;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    text-align: right;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.footer-highlight {
+    color: #888;
+}
+
+.version {
+    margin-top: 2px;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .brand-logo {
+        font-size: 3rem;
+    }
+    
+    .tagline {
+        font-size: 1.3rem;
+    }
+    
+    .username-label {
+        font-size: 1.1rem;
+    }
+    
+    .search-button {
+        padding: 15px 60px;
+        font-size: 1.1rem;
+    }
+    
+    footer {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .films-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .film-grid {
+        grid-template-columns: 1fr;
+    }
+}

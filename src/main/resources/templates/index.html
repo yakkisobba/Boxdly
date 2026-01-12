@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxdly - Letterboxd Tracker</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="brand-logo">
+                <span class="brand-bo">Bo</span><span class="brand-x">x</span><span class="brand-d">d</span><span class="brand-ly">ly</span>
+            </h1>
+            <p class="tagline">Monthly Top Four Watched!</p>
+        </header>
+
+        <div class="search-section">
+            <form action="/search" method="get" class="search-form">
+                <label for="username" class="username-label">
+                    Enter <span class="letterboxd-link">Letterboxd</span> Username
+                </label>
+                <div class="input-wrapper">
+                    <input type="text" 
+                           name="username" 
+                           id="username" 
+                           placeholder="ie. yakisobaa" 
+                           required
+                           autocomplete="off">
+                </div>
+                <button type="submit" class="search-button">Search</button>
+            </form>
+            
+            <div th:if="${error}" class="error-message">
+                <p th:text="${error}"></p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Created by <span class="footer-highlight">frogsvelocity</span></p>
+            <p class="version">Version 1.1</p>
+        </footer>
+    </div>
+</body>
+</html>
