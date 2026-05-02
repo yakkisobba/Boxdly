@@ -46,10 +46,10 @@ export default function FilmCard({ entry, rank, size = 'sm' }: Props) {
       {rank !== undefined && (
         <span style={{
           fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(0.75rem, 2vw, 1.25rem)',
+          fontSize: 'clamp(0.6rem, 1.5vw, 0.75rem)',
           fontWeight: 700,
           color: 'var(--text-dim)',
-          minWidth: 'clamp(0.75rem, 2vw, 1.25rem)',
+          minWidth: 'clamp(0.6rem, 1.5vw, 0.75rem)',
           lineHeight: 1,
           flexShrink: 0,
         }}>
@@ -59,8 +59,8 @@ export default function FilmCard({ entry, rank, size = 'sm' }: Props) {
 
       {/* Poster */}
       <div style={{
-        width:     isLg ? 'clamp(32px, 5vw, 48px)' : 'clamp(20px, 3.5vw, 32px)',
-        height:    isLg ? 'clamp(48px, 7.5vw, 72px)' : 'clamp(30px, 5vw, 48px)',
+        width:     isLg ? 'clamp(28px, 4vw, 44px)' : 'clamp(16px, 2.5vw, 24px)',
+        height:    isLg ? 'clamp(42px, 6vw, 66px)' : 'clamp(24px, 3.5vw, 36px)',
         borderRadius: 'var(--radius-sm)',
         background: 'var(--bg-card)',
         border: '1px solid var(--border)',
@@ -87,10 +87,13 @@ export default function FilmCard({ entry, rank, size = 'sm' }: Props) {
           fontFamily: 'var(--font-display)',
           fontSize: 'clamp(0.6rem, 1.8vw, 0.8rem)',
           color: 'var(--text)',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          whiteSpace: 'nowrap',
+           overflow: 'hidden',
+          display: '-webkit-box',
+          WebkitLineClamp: 2,
+          WebkitBoxOrient: 'vertical',
+          whiteSpace: 'normal',
           marginBottom: '0.15rem',
+          lineHeight: 1.2,
         }}>
           {entry.title}
         </div>
