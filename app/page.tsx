@@ -407,7 +407,7 @@ export default function Home() {
                 flexDirection: 'column',
                 flex: '1 1 clamp(180px, 55%, 999px)',
               }}>
-                <PanelLabel>This Month's Favourites</PanelLabel>
+                <PanelLabel>Four Favourites</PanelLabel>
                 {monthStats?.top4?.length ? (
                   <div style={{
                     display: 'grid',

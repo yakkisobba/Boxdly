@@ -85,7 +85,7 @@ export default function FilmCard({ entry, rank, size = 'sm' }: Props) {
       <div style={{ flex: 1, minWidth: 0, overflow: 'hidden' }}>
         <div style={{
           fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(0.6rem, 1.8vw, 0.8rem)',
+          fontSize: 'clamp(0.5rem, 1.4vw, 0.65rem)',
           color: 'var(--text)',
            overflow: 'hidden',
           display: '-webkit-box',
