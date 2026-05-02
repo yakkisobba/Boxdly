@@ -2,8 +2,11 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Unboxd — Your Letterboxd Stats',
-  description: 'Beautiful stats and insights from your Letterboxd diary.',
+  title: 'unboxd',
+  description: 'Your Letterboxd diary, unwrapped.',
+   icons: {
+    icon: '/ic_unboxd.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
