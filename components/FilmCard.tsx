@@ -43,24 +43,12 @@ export default function FilmCard({ entry, rank, size = 'sm' }: Props) {
         el.style.background = 'var(--bg-elevated)';
       }}
     >
-      {rank !== undefined && (
-        <span style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(0.6rem, 1.5vw, 0.75rem)',
-          fontWeight: 700,
-          color: 'var(--text-dim)',
-          minWidth: 'clamp(0.6rem, 1.5vw, 0.75rem)',
-          lineHeight: 1,
-          flexShrink: 0,
-        }}>
-          {rank}
-        </span>
-      )}
+      
 
       {/* Poster */}
       <div style={{
         width:     isLg ? 'clamp(28px, 4vw, 44px)' : 'clamp(16px, 2.5vw, 24px)',
-        height:    isLg ? 'clamp(42px, 6vw, 66px)' : 'clamp(24px, 3.5vw, 36px)',
+        height:    isLg ? 'clamp(42px, 6vw, 66px)' : 'clamp(28px, 3.5vw, 36px)',
         borderRadius: 'var(--radius-sm)',
         background: 'var(--bg-card)',
         border: '1px solid var(--border)',
