@@ -312,22 +312,24 @@ export default function Home() {
   );
 
   /* ── DASHBOARD ── */
+
   return (
     <main style={{
       minHeight: '100vh',
-      display: 'flex',         
-      flexDirection: 'column',  
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       padding: 'clamp(0.75rem, 3vw, 2.5rem) clamp(0.5rem, 3vw, 2rem)',
       position: 'relative',
       zIndex: 1,
     }}>
       {/* centred column — narrower on mobile so BoxFrame has breathing room */}
-      <div style={{ maxWidth: 760, margin: '0 auto', width: '100%', display: 'flex', flexDirection: 'column', flex: 1 }}>
+       <div style={{ maxWidth: 760, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
         {/* header */}
         <div className="fade-up" style={{
-          marginTop: 'clamp(0.5rem, 2vw, 1.75rem)',
-          marginBottom: 'clamp(1.25rem, 3vw, 1.75rem)',
+          marginBottom: 'clamp(0.75rem, 3vw, 1.75rem)',
           textAlign: 'center',
         }}>
           <h1 style={{
@@ -354,7 +356,7 @@ export default function Home() {
         {/* ── BoxFrame — centred, max-width tightened on mobile ── */}
         <div className="fade-up-1" style={{
           maxWidth: 'min(100%, 700px)',
-          margin: '0 auto',
+          width: '100%',
         }}>
           <BoxFrame>
 
@@ -397,6 +399,7 @@ export default function Home() {
               display: 'flex',
               flexWrap: 'wrap',
               gap: 'clamp(0.3rem, 1.5vw, 0.75rem)',
+              alignItems: 'stretch',
             }}>
               {/* four favourites — full width on mobile, 62% on wider */}
               <Panel style={{
@@ -409,9 +412,9 @@ export default function Home() {
                   <div style={{
                     display: 'grid',
                     gridTemplateColumns: '1fr 1fr',
+                    gridTemplateRows: '1fr 1fr',
                     gap: 'clamp(0.2rem, 1.5vw, 0.5rem)',
                     flex: 1,
-                    
                   }}>
                     {monthStats.top4.map((e, i) => (
                       <FilmCard key={`${e.title}-${i}`} entry={e} rank={i + 1} />
@@ -471,17 +474,15 @@ export default function Home() {
 
         {/* footer row */}
         <div className="fade-up-2" style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginTop: 'auto',        // ← replaces the clamp margin
-        paddingTop: 'clamp(0.6rem, 2vw, 1.25rem)',  // ← keeps spacing
-        flexWrap: 'wrap',
-        gap: '0.5rem',
-        maxWidth: 'min(100%, 700px)',
-        margin: 'auto auto 0',   // ← top:auto pushes it down, bottom:0 pins it
-        width: '100%',
-      }}>
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          paddingTop: 'clamp(0.6rem, 2vw, 1.25rem)',
+          flexWrap: 'wrap',
+          gap: '0.5rem',
+          maxWidth: 'min(100%, 700px)',
+          width: '100%',
+        }}>
           <span style={{
             fontSize: 'clamp(0.55rem, 1.5vw, 0.7rem)',
             color: 'var(--text-dim)',

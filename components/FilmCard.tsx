@@ -30,8 +30,7 @@ export default function FilmCard({ entry, rank, size = 'sm' }: Props) {
         transition: 'border-color 0.15s, background 0.15s',
         minWidth: 0,
         overflow: 'hidden',
-        alignSelf: 'flex-start',  
-        height: 'fit-content',
+         height: '100%',
       }}
       onMouseEnter={e => {
         const el = e.currentTarget as HTMLElement;
