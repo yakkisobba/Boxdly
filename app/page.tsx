@@ -145,12 +145,8 @@ export default function Home() {
     }
   }, [inputValue]);
 
-  const availableMonths = entries.length > 0 ? getAvailableMonths(entries) : [];
-  const selectedMonth   = availableMonths[selectedMonthIdx] ?? null;
   const windowStats     = getWindowStats(entries, selectedRange);
-  const monthStats      = selectedMonth
-    ? getMonthStats(entries, { type: 'month', year: selectedMonth.year, month: selectedMonth.month })
-    : null;
+  const monthStats = getMonthStats(entries, selectedRange);
   const heatmapData = getHeatmapData(entries);
 
   const totalRated = entries.filter(e => e.rating !== null).length;
